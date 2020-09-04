@@ -10,57 +10,57 @@ class Thermostat {
     this.MINIMUM_TEMPERATURE = 10;
     this.MAX_LIMIT_PSM_ON = 25;
     this.MAX_LIMIT_PSM_OFF = 32;
-    this.powersaving = true;
+    this.powerSavingMode = true;
     this.MEDIUM_USAGE_MIN = 18;
     this.MEDIUM_USAGE_MAX = 25;
   }
 
-  getTemperature(){
+  getTemperature() {
     return this.temperature;
   }
 
-  increase(){
+  increase() {
     if(this.isMaximumTemperature()){
      return;
     }
     this.temperature++;
   }
 
-  decrease(){
+  decrease() {
     if(this.isMinimumTemperature()){
       return;
     }
     this.temperature--;
   }
 
-  isMinimumTemperature(){
+  isMinimumTemperature() {
     return this.temperature === this.MINIMUM_TEMPERATURE;
   }
 
-  isMaximumTemperature(){
+  isMaximumTemperature() {
     if(this.isPowerSavingOn() === false) {
       return this.temperature  === this.MAX_LIMIT_PSM_OFF;
     }
     return this.temperature === this.MAX_LIMIT_PSM_ON;
   }
 
-  isPowerSavingOn(){
-    return this.powersaving === true;
+  isPowerSavingOn() {
+    return this.powerSavingMode === true;
   }
 
-  switchPowerSavingOff(){
-    this.powersaving =  false;
+  switchPowerSavingOff() {
+    this.powerSavingMode =  false;
   }
 
-  switchPowerSavingOn(){
-    this.powersaving =  true;
+  switchPowerSavingOn() {
+    this.powerSavingMode =  true;
   }
 
-  reset(){
+  reset() {
     this.temperature = this.DEFAULT_TEMPERATURE;
   }
 
-  usage(){
+  usage() {
     if(this.temperature < this.MEDIUM_USAGE_MIN) {
       return "low-usage"
     } else if (this.temperature <= this.MEDIUM_USAGE_MAX) {
