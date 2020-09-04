@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <title>Thermostat</title>
+  </head>
+  <body>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="src/thermostat.js"></script>
+    <script src="src/interface.js"></script>
+
+    <section>
+      <h2> Thermostat </h2>
+      <h3> Current Temperature: </h3>
+      <h3 id="temperature" class=></h3>
+      <p>
+        <button id="temperature-up">+</button>
+        <button id="temperature-down">-</button>
+        <button id="temperature-reset">Reset</button>
+        Power saving mode is <span id="power-saving-status">ON</span>
+        <button id="powersaving-on">Turn Power Saving Mode On</button>
+        <button id="powersaving-off">Turn Power Saving Mode Off</button>
+      </p>
+    </section>
+    <section>
+      <h3>Local temperature: <span id="local-temperature"></span></h3>
+      <select id='current-city'>
+        <option value="basildon">Basildon</option>
+        <option value="chelmsford">Chelmsford</option>
+        <option value="tokyo">Tokyo</option>
+      </select>
+    </section>
+    <section>
+  <h1><span id="city-name">London</span> temperature: <span id="select-temperature">20</span></h1>
+  <form id="select-city">
+    <input id="typed-city" type="text" placeholder="Enter a city"></input>
+    <input type="submit"></input>
+  </form>
+</section>
+  </body>
+</html>
